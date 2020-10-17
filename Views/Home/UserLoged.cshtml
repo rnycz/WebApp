@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Twój profil";
+}
+
+<h2>Twój profil</h2>
+
+@if (TempData["Loged"] != null)
+{
+    <h4 class="text-warning">@TempData["Loged"]</h4>
+}
+
+@if (Session["UserName"] != null)
+{
+<p class="lead">Witam @Session["UserName"].ToString(), zalogowałeś się na swoje konto. Możesz teraz zarządzać produktami.</p>
+    <hr />
+    <p>@Html.ActionLink("Zarządzaj produktami", "Index", "Products")</p>
+    <p>@Html.ActionLink("Wyloguj", "Logout", "Home")</p>
+}

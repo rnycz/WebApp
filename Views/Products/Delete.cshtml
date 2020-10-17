@@ -1,0 +1,72 @@
+﻿@model Magazyn.Models.Product
+
+@{
+    ViewBag.Title = "Usuń";
+}
+
+<h1>Usuń</h1>
+
+<h3>Na pewno chcesz usunąć ten rekord?</h3>
+<div>
+    <h4>Produkt</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EAN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Unit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Availability)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Availability)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-default" /> |
+            @Html.ActionLink("Powrót do listy", "Index")
+        </div>
+    }
+</div>
